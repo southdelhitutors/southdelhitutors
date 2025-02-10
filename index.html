@@ -1,0 +1,281 @@
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>South Delhi Tutors - Premium Tuition Services</title>
+  <link rel="stylesheet" href="styles.css">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>
+  <!-- Add custom modal styles -->
+  <style>
+    .custom-modal {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: rgba(0,0,0,0.5);
+      display: none;
+      justify-content: center;
+      align-items: center;
+      z-index: 1000;
+      opacity: 0;
+      transition: opacity 0.3s ease;
+    }
+
+    .custom-modal.show {
+      display: flex;
+      opacity: 1;
+    }
+
+    .custom-modal-content {
+      background: linear-gradient(135deg, var(--primary-color) 0%, var(--secondary-color) 100%);
+      color: white;
+      padding: 30px;
+      border-radius: 15px;
+      text-align: center;
+      max-width: 400px;
+      width: 90%;
+      box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+      transform: scale(0.7);
+      opacity: 0;
+      transition: all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    }
+
+    .custom-modal.show .custom-modal-content {
+      transform: scale(1);
+      opacity: 1;
+    }
+
+    .custom-modal-close {
+      position: absolute;
+      top: 10px;
+      right: 10px;
+      color: white;
+      font-size: 24px;
+      cursor: pointer;
+      background: none;
+      border: none;
+    }
+    /* Enhanced form input styles */
+    .form-control {
+      border: 1px solid #ced4da;
+      transition: all 0.3s ease;
+    }
+    .form-control:focus {
+      border-color: var(--secondary-color);
+      box-shadow: 0 0 0 0.2rem rgba(37, 117, 252, 0.25);
+    }
+  </style>
+</head>
+<body>
+  <nav class="navbar navbar-expand-lg navbar-dark custom-navbar fixed-top">
+    <div class="container">
+      <a class="navbar-brand d-flex align-items-center" href="#home">
+        <img src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEjUYBw0RvI-QE5MILNuw-iSc3YmGF5b0Z99ZXd17OxZ86PSD_nN4-N6neKzsyLPMWS8i5Z_AoiDImTd-7qILQPepMSBlNA5Zx_WZacjM8MQ1xMdOgQPJ1j2OfK4UKoDFee3NCDQBYklI27rBvKIBS4dVB7L6-kfMvzRjN-aOFMtXEatj89-bwNZ8S1ST5sq/s320/Designer%20(1).jpeg" alt="South Delhi Tutors Logo" width="50" height="50" class="me-3 logo-spin">
+        <span class="brand-text">South Delhi Tutors</span>
+      </a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav ms-auto">
+          <li class="nav-item"><a class="nav-link" href="#home">Home</a></li>
+          <li class="nav-item"><a class="nav-link" href="#services">Services</a></li>
+          <li class="nav-item"><a class="nav-link" href="#online">Online Tuition</a></li>
+          <li class="nav-item"><a class="nav-link" href="#about">About Us</a></li>
+          <li class="nav-item"><a class="nav-link contact-link" href="#contact">Contact</a></li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <div class="container-fluid p-0">
+    <section id="home" class="hero-section text-center">
+      <div class="container">
+        <div class="row align-items-center">
+          <div class="col-12">
+            <h1 class="display-4 mb-3">Expert Tutoring in South Delhi</h1>
+            <p class="lead mb-4">Personalized Learning, Exceptional Results</p>
+            <a href="#contact" class="btn btn-primary btn-lg">Book a Session</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="services" class="section-padding">
+      <div class="container">
+        <h2 class="text-center mb-5">Our Services</h2>
+        <div class="row">
+          <div class="col-md-4 mb-4">
+            <div class="card h-100 service-card">
+              <div class="card-body text-center">
+                <i class="fas fa-chalkboard-teacher mb-3"></i>
+                <h5 class="card-title">In-Person Tuition</h5>
+                <p class="card-text">Customized face-to-face tutoring across South Delhi</p>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-4 mb-4">
+            <div class="card h-100 service-card">
+              <div class="card-body text-center">
+                <i class="fas fa-laptop mb-3"></i>
+                <h5 class="card-title">Online Tuition</h5>
+                <p class="card-text">Interactive virtual learning from the comfort of home</p>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-4 mb-4">
+            <div class="card h-100 service-card">
+              <div class="card-body text-center">
+                <i class="fas fa-book-open mb-3"></i>
+                <h5 class="card-title">All Subjects</h5>
+                <p class="card-text">Mathematics, Science, English, and more!</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="online" class="section-padding bg-light">
+      <div class="container">
+        <div class="row align-items-center">
+          <div class="col-md-12">
+            <h2 class="mb-4 text-center">Online Tuition</h2>
+            <div class="card mb-4">
+              <div class="card-body">
+                <h5 class="card-title">Interactive Virtual Learning</h5>
+                <ul class="list-group list-group-flush">
+                  <li class="list-group-item">Live one-on-one sessions</li>
+                  <li class="list-group-item">Screen sharing and digital whiteboard</li>
+                  <li class="list-group-item">Recorded lesson reviews</li>
+                  <li class="list-group-item">Flexible scheduling</li>
+                </ul>
+                <div class="text-center mt-3">
+                  <a href="#contact" class="btn btn-primary">Enroll Now</a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="about" class="section-padding">
+      <div class="container">
+        <h2 class="text-center mb-5">About South Delhi Tutors</h2>
+        <div class="row">
+          <div class="col-12">
+            <div class="card">
+              <div class="card-body">
+                <h5 class="card-title">Our Legacy of Excellence</h5>
+                <p class="card-text">With over 15 years of dedicated teaching experience, South Delhi Tutors has been a beacon of educational excellence. Our seasoned team of educators brings unparalleled expertise and a proven track record of academic success.</p>
+                <ul class="list-group list-group-flush">
+                  <li class="list-group-item">15+ Years of Teaching Experience</li>
+                  <li class="list-group-item">Customized learning plans</li>
+                  <li class="list-group-item">Experienced and qualified tutors</li>
+                  <li class="list-group-item">Comprehensive subject coverage</li>
+                  <li class="list-group-item">Proven track record of student success</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="testimonials" class="section-padding bg-light">
+      <div class="container">
+        <h2 class="text-center mb-5">Student Testimonials</h2>
+        <div id="testimonialCarousel" class="carousel slide" data-bs-ride="carousel">
+          <div class="carousel-inner">
+            <div class="carousel-item active">
+              <div class="testimonial-card">
+                <blockquote>
+                  "South Delhi Tutors transformed my understanding of mathematics. The personalized approach truly makes a difference!"
+                </blockquote>
+                <p class="testimonial-author">- Akash Singh, Class 12</p>
+              </div>
+            </div>
+            <div class="carousel-item">
+              <div class="testimonial-card">
+                <blockquote>
+                  "The online tuition sessions are incredibly interactive and engaging. I feel like I'm learning in a real classroom."
+                </blockquote>
+                <p class="testimonial-author">- Priya Sharma, Class 10</p>
+              </div>
+            </div>
+          </div>
+          <button class="carousel-control-prev" type="button" data-bs-target="#testimonialCarousel" data-bs-slide="prev">
+            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Previous</span>
+          </button>
+          <button class="carousel-control-next" type="button" data-bs-target="#testimonialCarousel" data-bs-slide="next">
+            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Next</span>
+          </button>
+        </div>
+      </div>
+    </section>
+
+    <section id="contact" class="section-padding">
+      <div class="container">
+        <h2 class="text-center mb-5">Contact Us</h2>
+        <div class="row">
+          <div class="col-md-6">
+            <div class="card h-100">
+              <div class="card-body">
+                <h5 class="card-title">Send us a Message</h5>
+                <form>
+                  <div class="mb-3">
+                    <input type="text" class="form-control" placeholder="Your Name" id="nameInput" required>
+                  </div>
+                  <div class="mb-3">
+                    <input type="text" class="form-control" placeholder="Subject" id="subjectInput" required>
+                  </div>
+                  <div class="mb-3">
+                    <textarea class="form-control" rows="4" placeholder="Your Message" id="messageInput" required></textarea>
+                  </div>
+                  <button type="submit" class="btn btn-primary">Send Message</button>
+                </form>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-6">
+            <div class="card h-100">
+              <div class="card-body">
+                <h5 class="card-title">Contact Information</h5>
+                <ul class="list-group list-group-flush">
+                  <li class="list-group-item"><i class="fas fa-map-marker-alt me-2"></i>South Delhi, Delhi, India</li>
+                  <li class="list-group-item"><i class="fas fa-phone me-2"></i>8826731356</li>
+                  <li class="list-group-item"><i class="fas fa-envelope me-2"></i><a href="/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="d9aab6acadb1bdbcb5b1b0adacadb6abaa99a0b8b1b6b6f7bab6b4">[email&#160;protected]</a></li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </div>
+
+  <!-- Custom Modal -->
+  <div id="customModal" class="custom-modal">
+    <div class="custom-modal-content position-relative">
+      <button class="custom-modal-close" onclick="closeCustomModal()">&times;</button>
+      <h3 id="customModalTitle">Confirmation</h3>
+      <p id="customModalMessage">Message sent successfully!</p>
+      <button onclick="closeCustomModal()" class="btn btn-light mt-3">Close</button>
+    </div>
+  </div>
+
+  <footer class="bg-dark text-white text-center py-4">
+    <div class="container">
+      <p class="mb-0">&copy; 2023 South Delhi Tutors. All Rights Reserved.</p>
+    </div>
+  </footer>
+
+  <script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script src="script.js"></script>
+</body>
+</html>

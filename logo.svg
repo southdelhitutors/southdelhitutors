@@ -1,0 +1,12 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="100" height="100">
+  <defs>
+    <clipPath id="circleView">
+      <circle cx="50" cy="50" r="50" />
+    </clipPath>
+  </defs>
+  <image href="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEjUYBw0RvI-QE5MILNuw-iSc3YmGF5b0Z99ZXd17OxZ86PSD_nN4-N6neKzsyLPMWS8i5Z_AoiDImTd-7qILQPepMSBlNA5Zx_WZacjM8MQ1xMdOgQPJ1j2OfK4UKoDFee3NCDQBYklI27rBvKIBS4dVB7L6-kfMvzRjN-aOFMtXEatj89-bwNZ8S1ST5sq/s320/Designer%20(1).jpeg" 
+    width="100" 
+    height="100" 
+    clip-path="url(#circleView)"
+  />
+</svg>
