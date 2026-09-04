@@ -24,6 +24,8 @@
       --accent-gold: #c49a45;
       --accent-gold-hover: #b08736;
       --accent-soft: #fef8ec;
+      --whatsapp-green: #25d366;
+      --whatsapp-green-hover: #1da851;
       --border-color: #e2e8f0;
       --border-dark: #1e293b;
       --shadow-sm: 0 2px 4px rgba(15, 23, 42, 0.04);
@@ -99,7 +101,7 @@
       padding: 4px 0;
       border-radius: 20px;
       display: inline-block;
-      width: 130px; /* Fixed width prevents layout shifting */
+      width: 130px;
       text-align: center;
       white-space: nowrap;
       overflow: hidden;
@@ -175,6 +177,37 @@
     .btn-outline-hero:hover {
       background: rgba(255, 255, 255, 0.12);
       color: #ffffff;
+    }
+
+    /* Custom WhatsApp Callout Box */
+    .whatsapp-box {
+      background: #f0fdf4;
+      border: 1px solid #bbf7d0;
+      border-radius: 10px;
+      padding: 16px;
+      transition: transform 0.2s ease, box-shadow 0.2s ease;
+    }
+
+    .whatsapp-box:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 6px 15px rgba(37, 211, 102, 0.15);
+    }
+
+    .btn-whatsapp {
+      background-color: var(--whatsapp-green);
+      color: #ffffff !important;
+      font-weight: 600;
+      padding: 8px 16px;
+      border-radius: 6px;
+      text-decoration: none;
+      display: inline-flex;
+      align-items: center;
+      font-size: 0.85rem;
+      transition: background-color 0.2s ease;
+    }
+
+    .btn-whatsapp:hover {
+      background-color: var(--whatsapp-green-hover);
     }
 
     /* Layout Cards & Sections */
@@ -401,7 +434,18 @@
         <div class="col-md-5">
           <div class="pro-card">
             <h4 class="fw-bold fs-5 mb-3">Direct Contact</h4>
-            <p class="small text-muted mb-3"><i class="fas fa-phone text-gold me-2"></i>+91 99965 55276</p>
+            
+            <div class="whatsapp-box mb-3">
+              <div class="d-flex align-items-center justify-content-between mb-2">
+                <span class="fw-bold text-dark small"><i class="fab fa-whatsapp text-success me-1 fs-5"></i> WhatsApp Direct</span>
+                <span class="badge bg-success text-white" style="font-size: 0.65rem;">WhatsApp Only</span>
+              </div>
+              <p class="small text-muted mb-2">+91 99965 55276</p>
+              <a href="https://wa.me/919996555276?text=Hello%20Dinesh%20sir,%20I%20would%20like%20to%20inquire%20about%20your%20advisory%20services." target="_blank" class="btn-whatsapp w-100 justify-content-center">
+                <i class="fab fa-whatsapp me-2 fs-6"></i> Chat on WhatsApp
+              </a>
+            </div>
+
             <p class="small text-muted mb-3"><i class="fas fa-envelope text-gold me-2"></i>southdelhitutors@yahoo.com</p>
             <p class="small text-muted mb-0"><i class="fas fa-map-marker-alt text-gold me-2"></i>Sonipat, Haryana / Delhi NCR, India</p>
           </div>
@@ -433,7 +477,7 @@
         <div class="modal-body p-4">
           <form action="https://formsubmit.co/southdelhitutors@yahoo.com" method="POST">
             <div class="mb-3"><input type="text" name="Name" class="form-control" placeholder="Full Name" required></div>
-            <div class="mb-3"><input type="tel" name="Phone" class="form-control" placeholder="Phone Number" required></div>
+            <div class="mb-3"><input type="tel" name="WhatsApp Number" class="form-control" placeholder="WhatsApp Number" required></div>
             <button type="submit" class="btn btn-gold w-100">Submit Request</button>
           </form>
         </div>
