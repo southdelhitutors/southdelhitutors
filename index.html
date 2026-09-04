@@ -108,7 +108,6 @@
       text-overflow: ellipsis;
     }
 
-    /* ENFORCED GAP & PADDING RULES FOR TABS */
     .navbar-nav {
       gap: 1rem;
     }
@@ -184,7 +183,7 @@
       background: #f0fdf4;
       border: 1px solid #bbf7d0;
       border-radius: 10px;
-      padding: 16px;
+      padding: 18px;
       transition: transform 0.2s ease, box-shadow 0.2s ease;
     }
 
@@ -197,12 +196,12 @@
       background-color: var(--whatsapp-green);
       color: #ffffff !important;
       font-weight: 600;
-      padding: 8px 16px;
+      padding: 10px 18px;
       border-radius: 6px;
       text-decoration: none;
       display: inline-flex;
       align-items: center;
-      font-size: 0.85rem;
+      font-size: 0.875rem;
       transition: background-color 0.2s ease;
     }
 
@@ -435,14 +434,14 @@
           <div class="pro-card">
             <h4 class="fw-bold fs-5 mb-3">Direct Contact</h4>
             
-            <div class="whatsapp-box mb-3">
+            <div class="whatsapp-box mb-4">
               <div class="d-flex align-items-center justify-content-between mb-2">
-                <span class="fw-bold text-dark small"><i class="fab fa-whatsapp text-success me-1 fs-5"></i> WhatsApp Direct</span>
-                <span class="badge bg-success text-white" style="font-size: 0.65rem;">WhatsApp Only</span>
+                <span class="fw-bold text-dark small"><i class="fab fa-whatsapp text-success me-1 fs-5"></i> Direct WhatsApp</span>
+                <span class="badge bg-success text-white" style="font-size: 0.65rem;">WhatsApp Messaging Only</span>
               </div>
-              <p class="small text-muted mb-2">+91 99965 55276</p>
+              <p class="small text-muted mb-3">+91 99965 55276 (No Voice Calls)</p>
               <a href="https://wa.me/919996555276?text=Hello%20Dinesh%20sir,%20I%20would%20like%20to%20inquire%20about%20your%20advisory%20services." target="_blank" class="btn-whatsapp w-100 justify-content-center">
-                <i class="fab fa-whatsapp me-2 fs-6"></i> Chat on WhatsApp
+                <i class="fab fa-whatsapp me-2 fs-5"></i> Chat via WhatsApp
               </a>
             </div>
 
@@ -450,15 +449,46 @@
             <p class="small text-muted mb-0"><i class="fas fa-map-marker-alt text-gold me-2"></i>Sonipat, Haryana / Delhi NCR, India</p>
           </div>
         </div>
+
         <div class="col-md-7">
           <div class="pro-card">
-            <h4 class="fw-bold fs-5 mb-3">Schedule Consultation</h4>
+            <h4 class="fw-bold fs-5 mb-1">Schedule Advisory Consultation</h4>
+            <p class="small text-muted mb-4">Fill out the form below to receive a direct email response regarding your inquiry.</p>
+            
             <form action="https://formsubmit.co/southdelhitutors@yahoo.com" method="POST">
               <div class="row g-3">
-                <div class="col-md-6"><input type="text" name="Name" class="form-control" placeholder="Full Name" required></div>
-                <div class="col-md-6"><input type="email" name="Email" class="form-control" placeholder="Email Address" required></div>
-                <div class="col-12"><textarea name="Message" class="form-control" rows="3" placeholder="Briefly describe your request..." required></textarea></div>
-                <div class="col-12"><button type="submit" class="btn btn-gold w-100">Submit Request</button></div>
+                <div class="col-md-6">
+                  <label class="form-label small fw-semibold text-dark">Full Name *</label>
+                  <input type="text" name="Name" class="form-control" placeholder="John Doe" required>
+                </div>
+                <div class="col-md-6">
+                  <label class="form-label small fw-semibold text-dark">Email Address *</label>
+                  <input type="email" name="Email" class="form-control" placeholder="john@example.com" required>
+                </div>
+                <div class="col-md-6">
+                  <label class="form-label small fw-semibold text-dark">WhatsApp Number *</label>
+                  <input type="tel" name="WhatsApp Number" class="form-control" placeholder="+91 98765 43210" required>
+                </div>
+                <div class="col-md-6">
+                  <label class="form-label small fw-semibold text-dark">Advisory Area</label>
+                  <select name="Advisory Focus" class="form-select">
+                    <option value="Financial Analytics">Financial & Business Analytics</option>
+                    <option value="Strategic Advisory">Strategic Planning & Break-Even</option>
+                    <option value="Academic Research">Academic & Research Methodology</option>
+                    <option value="Other Inquiries">Other Inquiries</option>
+                  </select>
+                </div>
+                <div class="col-12">
+                  <label class="form-label small fw-semibold text-dark">Inquiry / Subject</label>
+                  <input type="text" name="Subject" class="form-control" placeholder="Brief subject of your consultation request">
+                </div>
+                <div class="col-12">
+                  <label class="form-label small fw-semibold text-dark">Detailed Requirements *</label>
+                  <textarea name="Message" class="form-control" rows="4" placeholder="Please provide details about your business requirements, quantitative objectives, or academic project..." required></textarea>
+                </div>
+                <div class="col-12 mt-4">
+                  <button type="submit" class="btn btn-gold w-100 py-2 fs-6">Submit Consultation Request</button>
+                </div>
               </div>
             </form>
           </div>
@@ -468,17 +498,43 @@
   </section>
 
   <div class="modal fade" id="consultationModal" tabindex="-1" aria-hidden="true">
-    <div class="modal-dialog modal-dialog-centered">
-      <div class="modal-content">
-        <div class="modal-header">
-          <h5 class="modal-title fw-bold fs-6">Book Direct Consultation</h5>
+    <div class="modal-dialog modal-dialog-centered modal-lg">
+      <div class="modal-content border-0 shadow-lg">
+        <div class="modal-header border-bottom">
+          <h5 class="modal-title fw-bold fs-5">Book One-on-One Session</h5>
           <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
         </div>
         <div class="modal-body p-4">
           <form action="https://formsubmit.co/southdelhitutors@yahoo.com" method="POST">
-            <div class="mb-3"><input type="text" name="Name" class="form-control" placeholder="Full Name" required></div>
-            <div class="mb-3"><input type="tel" name="WhatsApp Number" class="form-control" placeholder="WhatsApp Number" required></div>
-            <button type="submit" class="btn btn-gold w-100">Submit Request</button>
+            <div class="row g-3">
+              <div class="col-md-6">
+                <label class="form-label small fw-semibold text-dark">Full Name *</label>
+                <input type="text" name="Name" class="form-control" placeholder="Your Name" required>
+              </div>
+              <div class="col-md-6">
+                <label class="form-label small fw-semibold text-dark">Email Address *</label>
+                <input type="email" name="Email" class="form-control" placeholder="yourname@domain.com" required>
+              </div>
+              <div class="col-md-6">
+                <label class="form-label small fw-semibold text-dark">WhatsApp Contact *</label>
+                <input type="tel" name="WhatsApp Number" class="form-control" placeholder="+91 99965 55276" required>
+              </div>
+              <div class="col-md-6">
+                <label class="form-label small fw-semibold text-dark">Consultation Type</label>
+                <select name="Session Type" class="form-select">
+                  <option value="Business Strategy">Business Financial Advisory</option>
+                  <option value="Academic Guidance">Academic Research / M.Phil Consultation</option>
+                  <option value="Quantitative Analysis">Quantitative Analytics & Modeling</option>
+                </select>
+              </div>
+              <div class="col-12">
+                <label class="form-label small fw-semibold text-dark">Session Overview / Objectives *</label>
+                <textarea name="Message" class="form-control" rows="3" placeholder="Outline the main topics or questions you wish to address during the session..." required></textarea>
+              </div>
+              <div class="col-12 mt-3">
+                <button type="submit" class="btn btn-gold w-100 py-2 fw-semibold">Confirm Advisory Booking</button>
+              </div>
+            </div>
           </form>
         </div>
       </div>
