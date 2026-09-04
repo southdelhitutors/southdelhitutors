@@ -5,6 +5,8 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Dinesh Chopra | Business & Finance Advisory</title>
   
+  <link rel="icon" href="logo.png" type="image/png">
+  
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@500;600;700;800&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
@@ -97,7 +99,7 @@
       padding: 4px 0;
       border-radius: 20px;
       display: inline-block;
-      width: 130px; /* Fixed width prevents shifting adjacent links */
+      width: 130px; /* Fixed width prevents layout shifting */
       text-align: center;
       white-space: nowrap;
       overflow: hidden;
@@ -106,7 +108,7 @@
 
     /* ENFORCED GAP & PADDING RULES FOR TABS */
     .navbar-nav {
-      gap: 1rem; /* Consistent spacing between menu items */
+      gap: 1rem;
     }
 
     .nav-link {
@@ -460,14 +462,12 @@
         progressBar.style.transform = `scaleX(${scrolled})`;
       }
 
-      // Map sections to the reduced nav tabs dynamically
       const sections = ['home', 'about', 'expertise', 'frameworks', 'governance', 'credentials', 'contact'];
       const sectionTracker = document.getElementById('sectionTracker');
 
       sections.forEach(sectionId => {
         const section = document.getElementById(sectionId);
         
-        // Map detailed sections to the 4 core navbar link highlights
         let navLinkId = 'nav-' + sectionId;
         if (['frameworks', 'governance', 'credentials'].includes(sectionId)) {
           navLinkId = 'nav-expertise';
