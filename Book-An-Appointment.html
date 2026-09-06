@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Book an appointment with Dinesh Chopra for business, financial, and academic advisory.">
+  <title>Book an Appointment | Dinesh Chopra</title>
+
+  <link rel="icon" href="logo.png" type="image/png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@500;600;700;800&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
+  <link href="Style.css" rel="stylesheet">
+</head>
+<body class="appointment-page">
+  <div class="progress-container" aria-hidden="true">
+    <div class="progress-bar-fill" id="progressBar"></div>
+  </div>
+
+  <nav class="navbar navbar-expand-lg navbar-dark custom-navbar fixed-top">
+    <div class="container">
+      <a class="navbar-brand d-flex align-items-center me-3" href="index.html">
+        <i class="fa-solid fa-graduation-cap text-gold me-2"></i>
+        <span>Dinesh Chopra</span>
+      </a>
+      <span class="section-tracker-badge d-none d-xl-inline-block">Appointments</span>
+      <div class="ms-auto d-flex align-items-center gap-3">
+        <a class="appointment-back-link text-light" href="index.html">Back to website</a>
+      </div>
+    </div>
+  </nav>
+
+  <main class="appointment-main">
+    <div class="container">
+      <div class="appointment-intro mb-5">
+        <span class="appointment-kicker">One-to-one advisory</span>
+        <h1 class="appointment-title">Book an appointment that fits your week.</h1>
+        <p class="appointment-lead mb-0">Share a few details about your goals and preferred time. You will receive a direct email response to confirm your appointment.</p>
+      </div>
+
+      <div class="row g-4 g-xl-5 align-items-start">
+        <div class="col-lg-7">
+          <section class="appointment-panel" aria-labelledby="appointment-form-title">
+            <h2 class="appointment-panel-title" id="appointment-form-title">Appointment details</h2>
+            <form class="appointment-form" action="https://formsubmit.co/admin@southdelhitutors.com" method="POST" novalidate>
+              <input type="hidden" name="_subject" value="New Appointment Request">
+              <input type="hidden" name="_captcha" value="false">
+              <input type="hidden" name="_next" value="https://southdelhitutors.com/Book-An-Appointment.html">
+              <input type="hidden" id="appointment-date" name="Preferred Date" required>
+              <input type="hidden" id="appointment-time" name="Preferred Time" required>
+
+              <div class="row g-3">
+                <div class="col-md-6">
+                  <label class="form-label small fw-semibold text-dark" for="full-name">Full name *</label>
+                  <input class="form-control" id="full-name" name="Name" type="text" placeholder="Your full name" required>
+                  <span class="field-error" data-error-for="full-name"></span>
+                </div>
+                <div class="col-md-6">
+                  <label class="form-label small fw-semibold text-dark" for="email">Email address *</label>
+                  <input class="form-control" id="email" name="Email" type="email" placeholder="you@example.com" required>
+                  <span class="field-error" data-error-for="email"></span>
+                </div>
+                <div class="col-md-6">
+                  <label class="form-label small fw-semibold text-dark" for="whatsapp">WhatsApp number *</label>
+                  <input class="form-control" id="whatsapp" name="WhatsApp Number" type="tel" placeholder="+91 98765 43210" required>
+                  <span class="field-error" data-error-for="whatsapp"></span>
+                </div>
+                <div class="col-12">
+                  <div class="form-label small fw-semibold text-dark mb-2">Choose a time *</div>
+                  <button class="choose-time-button" id="openAvailabilityButton" type="button" aria-haspopup="dialog" aria-controls="availabilityModal">
+                    <span><i class="fa-regular fa-calendar me-2"></i><span id="selectionSummary">Select an available appointment time</span></span>
+                    <i class="fa-solid fa-arrow-right" aria-hidden="true"></i>
+                  </button>
+                  <span class="field-error" data-error-for="appointment-date"></span>
+                </div>
+                <div class="col-md-6">
+                  <label class="form-label small fw-semibold text-dark" for="focusToggle">Appointment focus</label>
+                  <div class="custom-select" id="focusSelect">
+                    <button class="custom-select-toggle" id="focusToggle" type="button" aria-haspopup="listbox" aria-expanded="false">
+                      <span id="focusLabel">Business Financial Advisory</span>
+                      <i class="fa-solid fa-chevron-down" aria-hidden="true"></i>
+                    </button>
+                    <div class="custom-select-menu" id="focusMenu" role="listbox" aria-labelledby="focusToggle" hidden>
+                      <button class="custom-select-option is-selected" type="button" role="option" aria-selected="true" data-value="Business Financial Advisory">Business Financial Advisory</button>
+                      <button class="custom-select-option" type="button" role="option" aria-selected="false" data-value="Academic Research Guidance">Academic Research Guidance</button>
+                      <button class="custom-select-option" type="button" role="option" aria-selected="false" data-value="Quantitative Analytics">Quantitative Analytics</button>
+                      <button class="custom-select-option" type="button" role="option" aria-selected="false" data-value="Other Inquiry">Other inquiry</button>
+                    </div>
+                    <input type="hidden" id="focus" name="Appointment Focus" value="Business Financial Advisory">
+                  </div>
+                </div>
+                <div class="col-12">
+                  <label class="form-label small fw-semibold text-dark" for="message">What would you like to discuss? *</label>
+                  <textarea class="form-control" id="message" name="Message" placeholder="Briefly describe your goals or questions..." required></textarea>
+                  <span class="field-error" data-error-for="message"></span>
+                </div>
+                <div class="col-12 pt-2">
+                  <button class="btn btn-gold w-100 py-3" type="submit"><i class="fa-regular fa-calendar-check me-2"></i>Request appointment</button>
+                </div>
+              </div>
+            </form>
+          </section>
+        </div>
+
+        <div class="col-lg-5">
+          <aside class="availability-panel" aria-labelledby="availability-title">
+            <span class="appointment-kicker">Current availability</span>
+            <h2 class="h3 mt-2 mb-2" id="availability-title">Choose a time</h2>
+            <p class="availability-note mb-0">Appointments are available across the week. Use the booking form to open the calendar and select a date and available time.</p>
+            <div class="border-top border-secondary mt-4 pt-4">
+              <p class="availability-note mb-2"><i class="fab fa-whatsapp text-success me-2"></i>Prefer messaging first?</p>
+              <a class="btn-whatsapp" href="https://wa.me/919996555276" target="_blank" rel="noopener"><i class="fab fa-whatsapp me-2"></i>Chat on WhatsApp</a>
+            </div>
+          </aside>
+        </div>
+      </div>
+    </div>
+  </main>
+
+  <div class="availability-modal" id="availabilityModal" role="dialog" aria-modal="true" aria-labelledby="availabilityModalTitle" hidden>
+    <div class="availability-modal-backdrop" data-close-availability></div>
+    <div class="availability-modal-dialog">
+      <div class="availability-modal-header">
+        <div>
+          <span class="appointment-kicker">Appointment calendar</span>
+          <h2 class="h3 mt-2 mb-1" id="availabilityModalTitle">Choose a time</h2>
+          <p class="availability-note mb-0">Select any slot marked Avail.</p>
+        </div>
+        <button class="availability-modal-close" type="button" aria-label="Close calendar" data-close-availability><i class="fa-solid fa-xmark"></i></button>
+      </div>
+      <div class="availability-list" id="availabilityList" aria-label="Available appointment timings" aria-live="polite">
+        <p class="availability-note mb-0">Loading appointment times...</p>
+      </div>
+    </div>
+  </div>
+
+  <footer class="py-4 text-center">
+    <div class="container"><p class="mb-0 small opacity-75">&copy; 2026 Dinesh Chopra Advisory. All Rights Reserved.</p></div>
+  </footer>
+
+  <script src="appointment-slots.js"></script>
+  <script src="Script.js"></script>
+</body>
+</html>

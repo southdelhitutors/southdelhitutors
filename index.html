@@ -1,0 +1,558 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Dinesh Chopra | Business & Finance Advisory</title>
+  
+  <link rel="icon" href="logo.png" type="image/png">
+  
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@500;600;700;800&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
+  <link href="Style.css" rel="stylesheet">
+
+  <style>
+    .text-gold {
+      color: #e2b85e !important;
+    }
+    :root {
+      --primary-dark: #0a101d;
+      --navy-card: #131c2e;
+      --text-main: #0f172a;
+      --text-muted: #475569;
+      --bg-warm: #fcfbf9;
+      --bg-surface: #ffffff;
+      --accent-gold: #c49a45;
+      --accent-gold-hover: #b08736;
+      --accent-soft: #fef8ec;
+      --whatsapp-green: #25d366;
+      --whatsapp-green-hover: #1da851;
+      --border-color: #e2e8f0;
+      --border-dark: #1e293b;
+      --shadow-sm: 0 2px 4px rgba(15, 23, 42, 0.04);
+      --shadow-md: 0 10px 25px -5px rgba(15, 23, 42, 0.08);
+      --shadow-hover: 0 20px 30px -10px rgba(15, 23, 42, 0.12);
+      --ease-smooth: cubic-bezier(0.16, 1, 0.3, 1);
+    }
+
+    html { scroll-behavior: smooth; }
+    body {
+      font-family: 'Inter', sans-serif;
+      color: var(--text-muted);
+      background-color: var(--bg-warm);
+      line-height: 1.7;
+      overflow-x: hidden;
+    }
+
+    h1, h2, h3, h4, h5, h6 {
+      font-family: 'Plus Jakarta Sans', sans-serif;
+      color: var(--text-main);
+      letter-spacing: -0.025em;
+    }
+
+    /* Fixed Reading Progress Bar */
+    .progress-container {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 4px;
+      background-color: #0a101d;
+      box-shadow: inset 0 -1px 0 rgba(255, 255, 255, 0.05);
+      z-index: 10001;
+      pointer-events: none;
+    }
+
+    .progress-bar-fill {
+      height: 100%;
+      width: 100%;
+      background: linear-gradient(90deg, #c49a45 0%, #f3e5ab 100%);
+      transform-origin: left center;
+      transform: scaleX(0);
+      will-change: transform;
+      box-shadow: 0 0 10px rgba(196, 154, 69, 0.6);
+    }
+
+    /* Custom Navbar with Strict Spacing & Fixed-Width Badge */
+    .custom-navbar {
+      top: 4px;
+      background-color: rgba(10, 16, 29, 0.98);
+      backdrop-filter: blur(12px);
+      -webkit-backdrop-filter: blur(12px);
+      border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+      padding: 0.85rem 0;
+    }
+    
+    .navbar-brand {
+      font-family: 'Plus Jakarta Sans', sans-serif;
+      font-weight: 800;
+      font-size: 1.15rem;
+      color: #ffffff !important;
+      letter-spacing: -0.02em;
+    }
+
+    /* FIXED WIDTH BADGE PREVENTS NAVBAR WOBBLING */
+    .section-tracker-badge {
+      font-size: 0.725rem;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      background: rgba(196, 154, 69, 0.15);
+      border: 1px solid rgba(196, 154, 69, 0.3);
+      color: var(--accent-gold);
+      padding: 4px 0;
+      border-radius: 20px;
+      display: inline-block;
+      width: 130px;
+      text-align: center;
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+    }
+
+    .navbar-nav {
+      gap: 1rem;
+    }
+
+    .nav-link {
+      color: #94a3b8 !important;
+      font-size: 0.875rem;
+      font-weight: 500;
+      padding: 0.5rem 0.75rem !important;
+      transition: color 0.2s ease;
+      position: relative;
+    }
+
+    .nav-link.active-section {
+      color: var(--accent-gold) !important;
+      font-weight: 600;
+    }
+
+    .nav-link.active-section::after {
+      content: '';
+      position: absolute;
+      bottom: -2px;
+      left: 0.75rem;
+      right: 0.75rem;
+      height: 2px;
+      background-color: var(--accent-gold);
+      border-radius: 2px;
+    }
+
+    .offcanvas-dark {
+      background-color: var(--primary-dark);
+      color: #ffffff;
+    }
+
+    /* Buttons */
+    .btn-gold {
+      background: var(--accent-gold);
+      color: #ffffff;
+      font-weight: 600;
+      font-size: 0.9rem;
+      padding: 10px 22px;
+      border-radius: 8px;
+      border: 1px solid rgba(255, 255, 255, 0.2);
+      box-shadow: 0 4px 12px rgba(196, 154, 69, 0.25);
+      transition: transform 0.25s var(--ease-smooth), background-color 0.25s ease;
+      white-space: nowrap;
+    }
+
+    .btn-gold:hover {
+      background: var(--accent-gold-hover);
+      color: #ffffff;
+      transform: translate3d(0, -2px, 0);
+    }
+
+    .btn-outline-hero {
+      background: rgba(255, 255, 255, 0.05);
+      color: #f1f5f9;
+      font-weight: 600;
+      font-size: 0.925rem;
+      padding: 12px 26px;
+      border-radius: 8px;
+      border: 1px solid rgba(255, 255, 255, 0.18);
+      transition: transform 0.25s var(--ease-smooth);
+    }
+
+    .btn-outline-hero:hover {
+      background: rgba(255, 255, 255, 0.12);
+      color: #ffffff;
+    }
+
+    /* Custom WhatsApp Callout Box */
+    .whatsapp-box {
+      background: #f0fdf4;
+      border: 1px solid #bbf7d0;
+      border-radius: 10px;
+      padding: 18px;
+      transition: transform 0.2s ease, box-shadow 0.2s ease;
+    }
+
+    .whatsapp-box:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 6px 15px rgba(37, 211, 102, 0.15);
+    }
+
+    .btn-whatsapp {
+      background-color: var(--whatsapp-green);
+      color: #ffffff !important;
+      font-weight: 600;
+      padding: 10px 18px;
+      border-radius: 6px;
+      text-decoration: none;
+      display: inline-flex;
+      align-items: center;
+      font-size: 0.875rem;
+      transition: background-color 0.2s ease;
+    }
+
+    .btn-whatsapp:hover {
+      background-color: var(--whatsapp-green-hover);
+    }
+
+    /* Layout Cards & Sections */
+    .hero-section {
+      background: radial-gradient(circle at 80% 20%, #172339 0%, var(--primary-dark) 100%);
+      color: #ffffff;
+      padding: 140px 0 100px 0;
+    }
+
+    .hero-badge {
+      background-color: rgba(196, 154, 69, 0.15);
+      border: 1px solid rgba(196, 154, 69, 0.35);
+      color: #e2b85e;
+      font-size: 0.775rem;
+      font-weight: 600;
+      text-transform: uppercase;
+      padding: 6px 14px;
+      border-radius: 6px;
+      display: inline-block;
+    }
+
+    .profile-img {
+      width: 240px;
+      height: 240px;
+      object-fit: cover;
+      border-radius: 12px;
+      box-shadow: 0 15px 35px rgba(0, 0, 0, 0.4);
+    }
+
+    .pro-card {
+      background: var(--bg-surface);
+      border: 1px solid var(--border-color);
+      border-radius: 12px;
+      padding: 36px;
+      height: 100%;
+      box-shadow: var(--shadow-sm);
+    }
+
+    .section-padding { padding: 95px 0; }
+    .bg-subtle-custom { background-color: #f4f2ed; }
+
+    footer {
+      background-color: var(--primary-dark);
+      color: #64748b;
+      border-top: 1px solid var(--border-dark);
+    }
+  </style>
+</head>
+<body>
+
+  <div class="progress-container">
+    <div class="progress-bar-fill" id="progressBar"></div>
+  </div>
+
+  <nav class="navbar navbar-expand-lg navbar-dark custom-navbar fixed-top">
+    <div class="container">
+      <a class="navbar-brand d-flex align-items-center me-3" href="#home">
+        <i class="fa-solid fa-graduation-cap text-gold me-2"></i>
+        <span>Dinesh Chopra</span>
+      </a>
+
+      <span class="section-tracker-badge d-none d-xl-inline-block" id="sectionTracker">Overview</span>
+      
+      <button class="navbar-toggler border-0 ms-auto" type="button" data-bs-toggle="offcanvas" data-bs-target="#mobileMenu">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+
+      <div class="collapse navbar-collapse d-none d-lg-flex" id="navbarNav">
+        <ul class="navbar-nav ms-auto align-items-center">
+          <li class="nav-item"><a class="nav-link active-section" id="nav-home" href="#home">Home</a></li>
+          <li class="nav-item"><a class="nav-link" id="nav-about" href="#about">About</a></li>
+          <li class="nav-item"><a class="nav-link" id="nav-expertise" href="#expertise">Expertise</a></li>
+          <li class="nav-item"><a class="nav-link" id="nav-contact" href="#contact">Contact</a></li>
+          <li class="nav-item ms-lg-2">
+            <a class="btn btn-gold btn-sm fw-semibold" href="Book-An-Appointment.html">
+              Book Session
+            </a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <div class="offcanvas offcanvas-end offcanvas-dark" tabindex="-1" id="mobileMenu">
+    <div class="offcanvas-header border-bottom border-secondary">
+      <h5 class="offcanvas-title text-white font-heading fw-bold">Navigation</h5>
+      <button type="button" class="btn-close btn-close-white" data-bs-dismiss="offcanvas"></button>
+    </div>
+    <div class="offcanvas-body d-flex flex-column justify-content-between py-4">
+      <ul class="navbar-nav fs-5">
+        <li class="nav-item mb-3"><a class="nav-link text-white" data-bs-dismiss="offcanvas" href="#home">Home</a></li>
+        <li class="nav-item mb-3"><a class="nav-link text-white" data-bs-dismiss="offcanvas" href="#about">About</a></li>
+        <li class="nav-item mb-3"><a class="nav-link text-white" data-bs-dismiss="offcanvas" href="#expertise">Expertise</a></li>
+        <li class="nav-item mb-3"><a class="nav-link text-white" data-bs-dismiss="offcanvas" href="#frameworks">Frameworks</a></li>
+        <li class="nav-item mb-3"><a class="nav-link text-white" data-bs-dismiss="offcanvas" href="#governance">Governance</a></li>
+        <li class="nav-item mb-3"><a class="nav-link text-white" data-bs-dismiss="offcanvas" href="#credentials">Credentials</a></li>
+        <li class="nav-item mb-3"><a class="nav-link text-white" data-bs-dismiss="offcanvas" href="#contact">Contact</a></li>
+      </ul>
+      <a class="btn btn-gold w-100 py-3 fw-semibold" href="Book-An-Appointment.html">
+        Book Advisory Session
+      </a>
+    </div>
+  </div>
+
+  <section id="home" class="hero-section">
+    <div class="container">
+      <div class="row align-items-center gy-4">
+        <div class="col-lg-8">
+          <span class="hero-badge mb-3">Business & Finance Subject-Matter Expert</span>
+          <h1 class="display-4 fw-bold text-white mb-2">Dinesh Chopra</h1>
+          <h3 class="fs-4 text-gold mb-4 fw-medium">Ex Lecturer at Delhi University | M.Phil (Commerce–Finance) | UGC-NET Qualified</h3>
+          <p class="lead text-light opacity-75 mb-4 pe-lg-5 fs-6">
+            Bridging academic rigor with 20+ years of entrepreneurship. Assisting startup founders, corporate executives, and research scholars convert complex financial data, quantitative analytics, and AI into actionable decisions.
+          </p>
+          <div class="d-flex flex-wrap gap-3">
+            <a class="btn btn-gold" href="Book-An-Appointment.html">
+              Schedule One-to-One Session
+            </a>
+            <a href="https://www.linkedin.com/in/dineshchopra205/" target="_blank" class="btn btn-outline-hero">
+              <i class="fab fa-linkedin me-2 text-gold"></i>LinkedIn Profile
+            </a>
+          </div>
+        </div>
+        <div class="col-lg-4 text-center">
+          <img src="image.png" alt="Dinesh Chopra" class="profile-img img-fluid">
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="about" class="section-padding">
+    <div class="container">
+      <span class="text-uppercase small fw-bold text-gold tracking-wide">Professional Background</span>
+      <h2 class="fw-bold fs-2 mt-1 mb-4">Mastering Business Analysis, Financial Research & Academic Integrity</h2>
+      <p class="text-muted fs-6 mb-0">
+        With teaching and professional education experience dating back to 1997, my career bridges top-tier academic instruction at Delhi University with over two decades of independent business ownership and consultative practice. My academic foundation includes a B.Com, M.Com, M.Phil in Commerce (specializing in Finance), PGDM, and UGC-NET qualification.
+      </p>
+    </div>
+  </section>
+
+  <section id="expertise" class="section-padding bg-subtle-custom">
+    <div class="container">
+      <span class="text-uppercase small fw-bold text-gold tracking-wide">Core Competencies</span>
+      <h2 class="fw-bold fs-2 mt-1 mb-4">Specialized Skills & Advisory Areas</h2>
+      <div class="row g-4">
+        <div class="col-md-6">
+          <div class="pro-card">
+            <h5 class="fw-bold text-dark mb-3"><i class="fas fa-calculator text-gold me-2"></i> Financial & Business Analytics</h5>
+            <ul class="list-unstyled text-muted small lh-lg mb-0">
+              <li><i class="fas fa-check text-gold me-2"></i>Cost & Financial Accounting</li>
+              <li><i class="fas fa-check text-gold me-2"></i>Financial Ratio & Profitability Analysis</li>
+              <li><i class="fas fa-check text-gold me-2"></i>Business Statistics & Quality Control</li>
+              <li><i class="fas fa-check text-gold me-2"></i>Operations Research & Queueing Models</li>
+            </ul>
+          </div>
+        </div>
+        <div class="col-md-6">
+          <div class="pro-card">
+            <h5 class="fw-bold text-dark mb-3"><i class="fas fa-chart-line text-gold me-2"></i> Strategic Advisory</h5>
+            <ul class="list-unstyled text-muted small lh-lg mb-0">
+              <li><i class="fas fa-check text-gold me-2"></i>Business Planning & Break-Even Analysis</li>
+              <li><i class="fas fa-check text-gold me-2"></i>Risk Mitigation & Capital Allocation</li>
+              <li><i class="fas fa-check text-gold me-2"></i>Academic Guidance & Research Methodology</li>
+              <li><i class="fas fa-check text-gold me-2"></i>AI & Quantitative Tool Integration</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="frameworks" class="section-padding">
+    <div class="container">
+      <span class="text-uppercase small fw-bold text-gold tracking-wide">Thought Leadership</span>
+      <h2 class="fw-bold fs-2 mt-1 mb-4">Decision Frameworks</h2>
+      <div class="row g-4">
+        <div class="col-md-6">
+          <div class="pro-card">
+            <h4 class="fw-bold fs-5 text-dark mb-2">Margin of Safety Calculations</h4>
+            <p class="small text-muted mb-0">Calculating exact volume buffers before pricing or expansion adjustments to protect downside risk and sustain operational viability.</p>
+          </div>
+        </div>
+        <div class="col-md-6">
+          <div class="pro-card">
+            <h4 class="fw-bold fs-5 text-dark mb-2">Quantitative Optimization</h4>
+            <p class="small text-muted mb-0">Applying mathematical modeling and queueing theory to streamline business resource management and reduce idle costs.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="governance" class="section-padding bg-subtle-custom">
+    <div class="container">
+      <span class="text-uppercase small fw-bold text-gold tracking-wide">Standards & Ethics</span>
+      <h2 class="fw-bold fs-2 mt-1 mb-4">Governance & Transparency</h2>
+      <div class="pro-card">
+        <h4 class="fw-bold fs-5 text-dark mb-2">Academic Transparency & Merit</h4>
+        <p class="small text-muted mb-0">
+          Advocating for clear conflict-of-interest safeguards, transparent evaluations, and independent review committees across academic institutions and corporate governance structures.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <section id="credentials" class="section-padding">
+    <div class="container">
+      <span class="text-uppercase small fw-bold text-gold tracking-wide">Qualifications</span>
+      <h2 class="fw-bold fs-2 mt-1 mb-4">Credentials & Certifications</h2>
+      <div class="pro-card">
+        <ul class="list-unstyled text-muted small lh-lg mb-0">
+          <li><i class="fas fa-graduation-cap text-gold me-2"></i><strong>M.Phil in Commerce (Finance)</strong> – Delhi University</li>
+          <li><i class="fas fa-award text-gold me-2"></i><strong>UGC-NET Qualified</strong> – Commerce</li>
+          <li><i class="fas fa-university text-gold me-2"></i><strong>M.Com & PGDM</strong></li>
+          <li><i class="fas fa-laptop-code text-gold me-2"></i><strong>DOEACC 'O' Level & DUCC C Language Certified</strong></li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <section id="contact" class="section-padding bg-subtle-custom">
+    <div class="container">
+      <div class="row gy-4">
+        <div class="col-md-5">
+          <div class="pro-card">
+            <h4 class="fw-bold fs-5 mb-3">Direct Contact</h4>
+            
+            <div class="whatsapp-box mb-4">
+              <div class="d-flex align-items-center justify-content-between mb-2">
+                <span class="fw-bold text-dark small"><i class="fab fa-whatsapp text-success me-1 fs-5"></i> Direct WhatsApp</span>
+                <span class="badge bg-success text-white" style="font-size: 0.65rem;">WhatsApp Messaging Only</span>
+              </div>
+              <p class="small text-muted mb-3">+91 99965 55276 (No Voice Calls)</p>
+              <a href="https://wa.me/919996555276?text=Hello%20Dinesh%20sir,%20I%20would%20like%20to%20inquire%20about%20your%20advisory%20services." target="_blank" class="btn-whatsapp w-100 justify-content-center">
+                <i class="fab fa-whatsapp me-2 fs-5"></i> Chat via WhatsApp
+              </a>
+            </div>
+
+            <p class="small text-muted mb-3"><i class="fas fa-envelope text-gold me-2"></i>admin@southdelhitutors.com</p>
+            <p class="small text-muted mb-0"><i class="fas fa-map-marker-alt text-gold me-2"></i>Sonipat, Haryana / Delhi NCR, India</p>
+          </div>
+        </div>
+
+        <div class="col-md-7">
+          <div class="pro-card">
+            <h4 class="fw-bold fs-5 mb-1">Schedule Advisory Consultation</h4>
+            <p class="small text-muted mb-4">Fill out the form below to receive a direct email response regarding your inquiry.</p>
+            
+            <form action="https://formsubmit.co/admin@southdelhitutors.com" method="POST">
+              <div class="row g-3">
+                <div class="col-md-6">
+                  <label class="form-label small fw-semibold text-dark">Full Name *</label>
+                  <input type="text" name="Name" class="form-control" placeholder="John Doe" required>
+                </div>
+                <div class="col-md-6">
+                  <label class="form-label small fw-semibold text-dark">Email Address *</label>
+                  <input type="email" name="Email" class="form-control" placeholder="john@example.com" required>
+                </div>
+                <div class="col-md-6">
+                  <label class="form-label small fw-semibold text-dark">WhatsApp Number *</label>
+                  <input type="tel" name="WhatsApp Number" class="form-control" placeholder="+91 98765 43210" required>
+                </div>
+                <div class="col-md-6">
+                  <label class="form-label small fw-semibold text-dark">Advisory Area</label>
+                  <select name="Advisory Focus" class="form-select">
+                    <option value="Financial Analytics">Financial & Business Analytics</option>
+                    <option value="Strategic Advisory">Strategic Planning & Break-Even</option>
+                    <option value="Academic Research">Academic & Research Methodology</option>
+                    <option value="Other Inquiries">Other Inquiries</option>
+                  </select>
+                </div>
+                <div class="col-12">
+                  <label class="form-label small fw-semibold text-dark">Inquiry / Subject</label>
+                  <input type="text" name="Subject" class="form-control" placeholder="Brief subject of your consultation request">
+                </div>
+                <div class="col-12">
+                  <label class="form-label small fw-semibold text-dark">Detailed Requirements *</label>
+                  <textarea name="Message" class="form-control" rows="4" placeholder="Please provide details about your business requirements, quantitative objectives, or academic project..." required></textarea>
+                </div>
+                <div class="col-12 mt-4">
+                  <button type="submit" class="btn btn-gold w-100 py-2 fs-6">Submit Consultation Request</button>
+                </div>
+              </div>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <div class="modal fade" id="consultationModal" tabindex="-1" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered modal-lg">
+      <div class="modal-content border-0 shadow-lg">
+        <div class="modal-header border-bottom">
+          <h5 class="modal-title fw-bold fs-5">Book One-on-One Session</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+        </div>
+        <div class="modal-body p-4">
+          <form action="https://formsubmit.co/admin@southdelhitutors.com" method="POST">
+            <div class="row g-3">
+              <div class="col-md-6">
+                <label class="form-label small fw-semibold text-dark">Full Name *</label>
+                <input type="text" name="Name" class="form-control" placeholder="Your Name" required>
+              </div>
+              <div class="col-md-6">
+                <label class="form-label small fw-semibold text-dark">Email Address *</label>
+                <input type="email" name="Email" class="form-control" placeholder="yourname@domain.com" required>
+              </div>
+              <div class="col-md-6">
+                <label class="form-label small fw-semibold text-dark">WhatsApp Contact *</label>
+                <input type="tel" name="WhatsApp Number" class="form-control" placeholder="+91 99965 55276" required>
+              </div>
+              <div class="col-md-6">
+                <label class="form-label small fw-semibold text-dark">Consultation Type</label>
+                <select name="Session Type" class="form-select">
+                  <option value="Business Strategy">Business Financial Advisory</option>
+                  <option value="Academic Guidance">Academic Research / M.Phil Consultation</option>
+                  <option value="Quantitative Analysis">Quantitative Analytics & Modeling</option>
+                </select>
+              </div>
+              <div class="col-12">
+                <label class="form-label small fw-semibold text-dark">Session Overview / Objectives *</label>
+                <textarea name="Message" class="form-control" rows="3" placeholder="Outline the main topics or questions you wish to address during the session..." required></textarea>
+              </div>
+              <div class="col-12 mt-3">
+                <button type="submit" class="btn btn-gold w-100 py-2 fw-semibold">Confirm Advisory Booking</button>
+              </div>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <footer class="py-4 text-center">
+    <div class="container">
+      <p class="mb-0 small opacity-75">&copy; 2026 Dinesh Chopra Advisory. All Rights Reserved.</p>
+    </div>
+  </footer>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="Script.js"></script>
+
+</body>
+</html>
